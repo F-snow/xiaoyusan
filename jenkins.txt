@@ -1,0 +1,14 @@
+1、centos8的安装
+https://www.cnblogs.com/Dear-XiaoLe/articles/12201099.html
+
+
+
+# 使用nohup命令启动
+$ nohup java -jar /data/software/jenkins.war  --httpPort=8775 --httpsPort=8776 > /data/software/jenkins.log 2>&1 &
+
+firewall-cmd --zone=public --add-port=8775/tcp --permanent
+
+
+# 修改之前建议做下备份，养成备份好习惯，大家在公屏上输入 备份大法好
+$ sed -i 's/http:\/\/updates.jenkinsci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' default.json && sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' default.json 
+
